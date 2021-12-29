@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "pylib"
-version = "0.0.1"
+version = "0.0.2"
 description = "Awesome `pylib` is a Python cli/package created with https://github.com/TezRomacH/python-package-template"
 readme = "README.md"
 authors = ["pandalearnstocode <pandalearnstoode@gmail.com>"]
@@ -144,3 +144,13 @@ branch = true
 [coverage.report]
 fail_under = 50
 show_missing = true
+
+
+[tool.semantic_release]
+version_variable = [
+    "pyproject.toml:version"
+]
+branch = "master"
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
