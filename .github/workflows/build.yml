@@ -40,3 +40,8 @@ jobs:
     - name: Run safety checks
       run: |
         make check-safety
+
+    - name: Build and publish
+      run: |
+        poetry version $(git describe --tags --abbrev=0)
+        poetry build
