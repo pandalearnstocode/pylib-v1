@@ -1,28 +1,64 @@
 # Release drafter configuration https://github.com/release-drafter/release-drafter#configuration
 # Emojis were chosen to match the https://gitmoji.carloscuesta.me/
 
-name-template: "v$NEXT_PATCH_VERSION"
-tag-template: "v$NEXT_PATCH_VERSION"
+# name-template: "v$NEXT_PATCH_VERSION"
+# tag-template: "v$NEXT_PATCH_VERSION"
 
+# categories:
+#   - title: ":rocket: Features"
+#     labels: [enhancement, feature, feat]
+#   - title: ":wrench: Fixes & Refactoring"
+#     labels: [bug, refactoring, bugfix, fix]
+#   - title: ":package: Build System & CI/CD"
+#     labels: [build, ci, testing, test, chore, refactor, perf]
+#   - title: ":boom: Breaking Changes"
+#     labels: [breaking, BREAKING CHANGE]
+#   - title: ":pencil: Documentation"
+#     labels: [documentation, docs]
+#   - title: ":arrow_up: Dependencies updates"
+#     labels: [dependencies]
+
+# template: |
+#   ## What’s Changed
+
+#   $CHANGES
+
+#   ## :busts_in_silhouette: List of contributors
+
+#   $CONTRIBUTORS
+
+
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: ":rocket: Features"
-    labels: [enhancement, feature, feat]
-  - title: ":wrench: Fixes & Refactoring"
-    labels: [bug, refactoring, bugfix, fix]
-  - title: ":package: Build System & CI/CD"
-    labels: [build, ci, testing, test, chore, refactor, perf]
-  - title: ":boom: Breaking Changes"
-    labels: [breaking, BREAKING CHANGE]
-  - title: ":pencil: Documentation"
-    labels: [documentation, docs]
-  - title: ":arrow_up: Dependencies updates"
-    labels: [dependencies]
-
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+      - 'feat'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: '🧰 Maintenance'
+    labels: 
+      - 'chore'
+      - 'refactoring'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
 template: |
-  ## What’s Changed
+  ## Changes
 
   $CHANGES
-
-  ## :busts_in_silhouette: List of contributors
-
-  $CONTRIBUTORS
