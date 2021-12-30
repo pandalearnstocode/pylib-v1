@@ -72,6 +72,7 @@ Want to know more about Poetry? Check [its documentation](https://python-poetry.
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
+ 
 - `poetry add numpy@latest`
 - `poetry run pytest`
 - `poetry publish --build`
