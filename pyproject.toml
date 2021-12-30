@@ -5,7 +5,8 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "pylib"
-version = "0.0.2"
+version = "0.0.3"
+
 description = "Awesome `pylib` is a Python cli/package created with https://github.com/TezRomacH/python-package-template"
 readme = "README.md"
 authors = ["pandalearnstocode <pandalearnstoode@gmail.com>"]
