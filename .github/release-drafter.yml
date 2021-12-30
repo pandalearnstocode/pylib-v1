@@ -6,15 +6,15 @@ tag-template: "v$NEXT_PATCH_VERSION"
 
 categories:
   - title: ":rocket: Features"
-    labels: [enhancement, feature]
+    labels: [enhancement, feature, feat]
   - title: ":wrench: Fixes & Refactoring"
     labels: [bug, refactoring, bugfix, fix]
   - title: ":package: Build System & CI/CD"
-    labels: [build, ci, testing]
+    labels: [build, ci, testing, test, chore, refactor, perf]
   - title: ":boom: Breaking Changes"
-    labels: [breaking]
+    labels: [breaking, BREAKING CHANGE]
   - title: ":pencil: Documentation"
-    labels: [documentation]
+    labels: [documentation, docs]
   - title: ":arrow_up: Dependencies updates"
     labels: [dependencies]
 
