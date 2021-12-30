@@ -1,0 +1,21 @@
+titleOnly: true
+types:
+  - enhancement
+  - feature
+  - feat
+  - bug
+  - refactoring
+  - bugfix
+  - fix
+  - build
+  - ci
+  - testing
+  - test
+  - chore
+  - refactor
+  - perf
+  - BREAKING CHANGE
+  - documentation
+  - breaking
+  - docs
+  - dependencies
