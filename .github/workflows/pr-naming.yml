@@ -1,14 +1,19 @@
-name: 'Assert Branch Naming Convention'
-on: pull_request
+name: "Lint PR"
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 
 jobs:
-  branch-naming-rules:
+  main:
+    name: Validate PR title
     runs-on: ubuntu-latest
     steps:
-      - uses: deepakputhraya/action-branch-name@master
-        with:
-          regex: '([a-z])+\/([a-z])+' # Regex the branch should match. This example enforces grouping
-          allowed_prefixes: 'enhancement, feature, feat, bug, refactoring, bugfix, fix, build, ci, testing, test, chore, refactor, perf, BREAKING CHANGE, documentation, breaking, docs, dependencies' # All branches should start with the given prefix
-          ignore: master, staging, develop # Ignore exactly matching branch names from convention
-          min_length: 5 # Min length of the branch name
-          max_length: 20 # Max length of the branch name
+      # Please look up the latest version from
+      # https://github.com/amannn/action-semantic-pull-request/releases
+      - uses: amannn/action-semantic-pull-request@v3.5.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
