@@ -17,7 +17,7 @@ Awesome `pylib` is a Python cli/package created with https://github.com/TezRomac
 
 </div>
 
-## Very first steps
+## __Very first steps__
 
 ### Initialize your code
 
