@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2021-12-31)
+### Feature
+* Jan release ([#42](https://github.com/pandalearnstocode/pylib-v1/issues/42)) ([`062c2ee`](https://github.com/pandalearnstocode/pylib-v1/commit/062c2ee4e84b4954966743fcd6d689c1fbff0207))
+
 ## v0.3.0 (2021-12-31)
 ### Feature
 * Some feat #38 ([`45cb632`](https://github.com/pandalearnstocode/pylib-v1/commit/45cb632d22794b328f99aa72047644ca6f0aa43c))
