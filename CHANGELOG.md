@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2021-12-31)
+### Feature
+* Some feat #38 ([`45cb632`](https://github.com/pandalearnstocode/pylib-v1/commit/45cb632d22794b328f99aa72047644ca6f0aa43c))
+
 ## v0.2.0 (2021-12-30)
 ### Feature
 * Hello world 33 (#33) ([#35](https://github.com/pandalearnstocode/pylib/issues/35)) ([`6d85664`](https://github.com/pandalearnstocode/pylib/commit/6d85664984a4bc6408c331a00a3df6c87c3c11a8))
