@@ -2,6 +2,8 @@
 
 <div align="center">
 
+  
+  
 [![Build status](https://github.com/pandalearnstocode/pylib/workflows/build/badge.svg?branch=master&event=push)](https://github.com/pandalearnstocode/pylib/actions?query=workflow%3Abuild)
 [![Python Version](https://img.shields.io/pypi/pyversions/pylib.svg)](https://pypi.org/project/pylib/)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/pandalearnstocode/pylib/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
