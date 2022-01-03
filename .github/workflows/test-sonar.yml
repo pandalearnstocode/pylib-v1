@@ -73,3 +73,39 @@ jobs:
           name: bandit-reports
           path: bandit-report.json
           retention-days: 5
+  unit-tests-pytest:
+    name: Run unit tests with pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from remote origin.
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Create cache depending on requirements file
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ env.pythonLocation }}-pip-
+      - name: Install dependencies & download data.
+        if: steps.cache.outputs.cache-hit != 'false' # Need to change later
+        run: |
+          pip install --upgrade pip
+          pip install -r pytest coverage coverage-badge pytest-html pytest-cov
+      - name: Run pytest & generate test coverage report (unit tests).
+        run: |
+          coverage run -m pytest
+          coverage xml
+      - name: Upload test coverage report generated for unit tests using pytest to GitHub packages.
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage.xml
+          retention-days: 5
