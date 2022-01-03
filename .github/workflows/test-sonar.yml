@@ -50,3 +50,26 @@ jobs:
         with:
           name: flake8-reports
           path: flake8.txt
+  qaqc-checks-bandit:
+    name: Run QA-QC checks with Bandit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from remote origin
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Check linting using bandit & generate report
+        run: |
+          pip install bandit
+          bandit --exit-zero --format json --output bandit-report.json --recursive .
+      - name: Upload bandit errors to to GitHub packages.
+        uses: actions/upload-artifact@v2
+        with:
+          name: bandit-reports
+          path: bandit-report.json
+          retention-days: 5
