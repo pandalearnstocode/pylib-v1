@@ -1,4 +1,4 @@
-name: PR Validation
+name: Test Sonar Cloud
 on:
   workflow_dispatch:
 env:
