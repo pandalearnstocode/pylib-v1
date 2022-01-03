@@ -1,0 +1,30 @@
+name: PR Validation
+on:
+  workflow_dispatch:
+env:
+  PYTHON_VERSION: '3.8'
+  ACR_NAME: mroi
+jobs:
+  qaqc-checks-pylint:
+    name: Run QA-QC checks with PyLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from remote origin.
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Generate logs for reporting using pylint.
+        run: |
+          pip install pylint
+          pylint app -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" --exit-zero > pylint.log
+      - name: Upload linting errors to to GitHub packages
+        uses: actions/upload-artifact@v2
+        with:
+          name: linting-reports
+          path: pylint.log
+          retention-days: 5
