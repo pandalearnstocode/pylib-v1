@@ -28,3 +28,25 @@ jobs:
           name: linting-reports
           path: pylint.log
           retention-days: 5
+  qaqc-checks-flake8:
+    name: Run QA-QC checks with flake8
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from remote origin.
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Check linting using flake8 & generate report
+        run: |
+          pip install flake8
+          flake8 --exit-zero --output-file=flake8.txt .
+      - name: Upload flake8 errors to to GitHub packages.
+        uses: actions/upload-artifact@v2
+        with:
+          name: flake8-reports
+          path: flake8.txt
