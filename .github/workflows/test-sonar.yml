@@ -23,7 +23,7 @@ jobs:
           pip install pylint
           pylint app -r n --msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" --exit-zero > pylint.log
       - name: Upload linting errors to to GitHub packages
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: linting-reports
           path: pylint.log
@@ -46,7 +46,7 @@ jobs:
           pip install flake8
           flake8 --exit-zero --output-file=flake8.txt .
       - name: Upload flake8 errors to to GitHub packages.
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: flake8-reports
           path: flake8.txt
@@ -68,7 +68,7 @@ jobs:
           pip install bandit
           bandit --exit-zero --format json --output bandit-report.json --recursive .
       - name: Upload bandit errors to to GitHub packages.
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bandit-reports
           path: bandit-report.json
@@ -104,7 +104,7 @@ jobs:
           coverage run -m pytest
           coverage xml
       - name: Upload test coverage report generated for unit tests using pytest to GitHub packages.
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: coverage
           path: coverage.xml
