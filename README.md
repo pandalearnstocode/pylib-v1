@@ -32,7 +32,6 @@ cd pylib && git init
 ```bash
 make poetry-download
 ```
-
 3. Initialize poetry and install `pre-commit` hooks:
 
 ```bash
